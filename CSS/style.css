@@ -1,0 +1,365 @@
+:root {
+  --max-width: 1200px;
+}
+/*index.html and resume.html have the same layout*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f4efe6;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #5e6c5b;
+  z-index: 99;
+}
+
+.info {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f4efe6;
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: #25330f;
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: #4B3F72;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: #f4efe6;
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: #fefcf6;
+  border-bottom-color: #fefcf6;
+  color: #fefcf6;
+}
+
+.section {
+  background-color: #f4efe6;
+}
+
+.sectionContainer {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: #5e6c5b;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.ptitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+.description a {
+  color: #1f2937;
+  transition: 0.3s;
+}
+
+.description:hover a {
+  color: #d6e0e2;
+}
+
+.button {
+  display: flex;
+  gap: 1rem;
+}
+
+.button button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid #25330f;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.contactMe button {
+  color: #5e6c5b;
+  /*background-color: #5e6c5b;
+  color: #faf5ff;*/
+}
+
+.contactMe:hover button {
+/*  background-color: #25330f;*/
+  background-color: #25330f;
+  color: #faf5ff;
+}
+
+.portfolio button {
+  color: #5e6c5b;
+}
+
+.portfolio:hover button {
+  background-color: #25330f;
+  color: #faf5ff;
+}
+
+.aboutMe button {
+  color: #5e6c5b;
+}
+
+.aboutMe:hover button {
+  background-color: #25330f;
+  color: #faf5ff;
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+.resume {
+  display: grid;
+  place-items: center;
+}
+
+.resume img {
+  width: min(30rem, 95%);
+}
+
+
+@media (width > 750px) {
+  .resume img {
+    height: 550px; 
+    margin-top: 100px; 
+  }
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: #faf5ff;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .sectionContainer {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .button {
+    margin: auto;
+  }
+
+  .resume {
+    grid-area: 1/1/2/2;
+  }
+}
+
+/*about.html*/
+.aboutSection {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4rem;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleC {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.descriptionC {
+  line-height: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+
+/*contact.html*/
+.contactPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split the page into two columns */
+  gap: 2rem; /* Gap between the image and the contact square */
+}
+
+.pic img {
+  width: 100%; /* Adjust the image size as needed */
+  max-width: 100%; /* Ensure the image fits within the container */
+  border-radius: 10px; /* Add rounded corners if desired */
+}
+
+.contactSquare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25330f; /* Color for the square */
+  border-radius: 10px; /* Rounded corners for the square */
+}
+
+.contactLinks {
+  text-align: center;
+}
+
+.contactLinks a {
+  display: block;
+  text-decoration: none;
+  color: #faf5ff; /* Text color for links */
+  padding: 1rem 2rem; /* Padding for each link */
+  margin: 0.5rem; /* Spacing between links */
+  border: 2px solid #faf5ff; /* Border for each link */
+  border-radius: 5px; /* Rounded corners for each link */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contactLinks a:hover {
+  background-color: #faf5ff; /* Background color on hover */
+  color: #25330f; /* Text color on hover */
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px; /* Adjust the horizontal padding as needed */
+  margin: 0 auto;
+}
+
+/*portfolio.html*/
+.designPortfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-bottom: 50px;
+}
+
+.design {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.design img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin-top: 100px;
+}
+
+.design p {
+  margin-top: 10px; /* Adjust this margin as needed */
+  font-size: 14px; /* Adjust the font size */
+}
